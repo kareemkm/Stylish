@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stylish/screens/forget_message.dart';
+import 'package:stylish/screens/main_screen.dart';
 import 'package:stylish/screens/sign_up.dart';
 import 'package:stylish/widgets/auth_button.dart';
 import 'package:stylish/widgets/button.dart';
@@ -74,7 +75,12 @@ class _LoginState extends State<Login> {
                 ],
               ),
               const SizedBox(height: 40,),
-              const Button(textButton: "Login"),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const MainScreen()));
+                },
+                child: const Button(textButton: "Login"),
+              ),
               const SizedBox(height: 40,),
               const Text(
                 "- OR Continue with -",
